@@ -4,9 +4,7 @@
   "description": "William (Blake) Whitham",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server",
-    "test": "test",
-    "build": "webpack --watch"
+    "build": "webpack"
   },
   "author": "Blake Whitham",
   "license": "ISC",
