@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
 import githubCalendar from 'github-calendar';
 
+import Card from './card';
+
 import Laptop from './laptop';
-import Screen from './screen';
-import Terminal from './terminal';
 
 import Calendar from './calendar';
 
@@ -42,9 +42,12 @@ const App = () => {
 
         }}
       >
-        <div>c1</div>
+        <Card title=" Create " />
+
         <div>c2</div>
-        <div>c3</div>
+
+        <Card title=" Live " />
+
       </div>
 
       <Laptop />

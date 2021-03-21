@@ -19,9 +19,18 @@ export default function Terminal() {
 
   return (
     <ReactTerminal
+      themes={{
+        theme: {
+          themeBGColor: '#022833',
+          themeToolbarColor: '#131519',
+          themeColor: '#839496',
+          themePromptColor: '#c4c4c4',
+        },
+      }}
+      theme="theme"
       welcomeMessage={welcomeMessage}
       commands={commands}
-      theme="dracula"
+      // showControlButtons={false}
     />
   );
 }
