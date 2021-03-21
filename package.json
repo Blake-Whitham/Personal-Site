@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
+    "postbuild": "sh ./replaceFile.sh",
     "start": "node server"
   },
   "author": "Blake Whitham",
