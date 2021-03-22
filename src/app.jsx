@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
+import { throttle } from 'lodash';
 import githubCalendar from 'github-calendar';
 
 import Card from './card';
@@ -11,20 +12,21 @@ import Calendar from './calendar';
 import About from './aboutme';
 
 // animation helpers
-const clientWidth = function () {
-  return Math.max(window.innerWidth, document.documentElement.clientWidth);
-};
-const clientHeight = function () {
-  return Math.max(window.innerHeight, document.documentElement.clientHeight);
-};
+const { clientWidth } = document.documentElement;
+const screenCenter = document.documentElement.clientHeight / 2;
+// const sum = 2000 / (y - screenCenter);
 
-const calc = (x, y) => [y + clientWidth, x - x];
+const calc = (x, y) => [(y - screenCenter) * 3, x - x];
 const trans1 = (x, y) => `translate3d(${-x}px,${y}px,0)`;
 
 const App = () => {
   const [{ xy }, set] = useSpring(() => ({
-    xy: [-clientWidth(), 0], config: { mass: 10, tension: 50, friction: 3000 },
+    xy: [-clientWidth * 0.8, 0], config: { mass: 10, tension: 50, friction: 3000 },
   }));
+
+  const paralax = (e) => {
+    set({ xy: calc(e.screenX, e.screenY) });
+  };
 
   useEffect(() => {
     githubCalendar('.calendar', 'blake-whitham', { responsive: true });
@@ -44,8 +46,8 @@ const App = () => {
         justifyContent: 'space-around',
         zIndex: '0',
       }}
-      onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
-      onTouchMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
+      onMouseMove={paralax}
+      onTouchMove={paralax}
     >
       <div
         style={{

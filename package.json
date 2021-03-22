@@ -39,6 +39,7 @@
     "express": "^4.17.1",
     "express-static-gzip": "^2.1.1",
     "github-calendar": "^2.2.7",
+    "lodash": "^4.17.21",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
