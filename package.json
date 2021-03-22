@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "postbuild": "sh ./replaceFile.sh",
     "start": "node server"
   },
   "author": "Blake Whitham",
@@ -38,7 +37,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-spring": "^8.0.27",
-    "react-terminal": "^1.1.0",
+    "react-terminal": "https://github.com/Blake-Whitham/react-terminal/tarball/master",
     "styled-components": "^5.2.1"
   }
 }

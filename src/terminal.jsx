@@ -2,7 +2,7 @@ import React from 'react';
 // import "./styles.css";
 import { ReactTerminal } from 'react-terminal';
 
-export default function Terminal() {
+export default function Terminal(carot) {
   const commands = {
     whoami: 'Blake',
     cd: (directory) => `changed path to ${directory}`,
@@ -30,6 +30,7 @@ export default function Terminal() {
       theme="theme"
       welcomeMessage={welcomeMessage}
       commands={commands}
+      prompt={carot || '%'}
       // showControlButtons={false}
     />
   );
