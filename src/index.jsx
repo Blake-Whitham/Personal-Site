@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { TerminalContextProvider } from 'react-terminal';
+import { TerminalContextProvider } from '@william-blake-whitham/react-terminal';
 
 import App from './app';
 

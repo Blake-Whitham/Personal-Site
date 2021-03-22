@@ -1,6 +1,6 @@
 import React from 'react';
 // import "./styles.css";
-import { ReactTerminal } from 'react-terminal';
+import { ReactTerminal } from '@william-blake-whitham/react-terminal';
 
 export default function Terminal(carot) {
   const commands = {
