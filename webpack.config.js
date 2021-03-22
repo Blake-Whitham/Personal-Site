@@ -7,7 +7,7 @@ const BrotliPlugin = require('brotli-webpack-plugin');
 const DIST_DIR = path.join(__dirname, '/client');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
 
   output: {
     path: DIST_DIR,

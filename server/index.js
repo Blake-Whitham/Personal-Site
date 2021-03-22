@@ -6,7 +6,7 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use('/build/client', expressStaticGzip('build/client', {
+app.use(expressStaticGzip('client', {
   enableBrotli: true,
   orderPreference: ['br', 'gz'],
   setHeaders(res) {
