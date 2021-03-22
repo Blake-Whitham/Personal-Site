@@ -1,8 +1,9 @@
 import React from 'react';
 // import "./styles.css";
 import { ReactTerminal } from '@william-blake-whitham/react-terminal';
+import PropTypes from 'prop-types';
 
-export default function Terminal(carot) {
+export default function Terminal({ carot }) {
   const commands = {
     whoami: 'Blake',
     cd: (directory) => `changed path to ${directory}`,
@@ -35,3 +36,7 @@ export default function Terminal(carot) {
     />
   );
 }
+
+Terminal.propTypes = {
+  carot: PropTypes.string.isRequired,
+};
