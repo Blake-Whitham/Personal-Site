@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 const Calendar = styled.div`
-
 & {
   border-radius: 10px;
-  margin: 100px auto 0 auto;
+  margin: 0px auto 0 auto;
   background-image:
   linear-gradient(180deg, rgba(0, 0, 0,.3), rgba(255, 255, 255,.3));
+  width: 90%;
   z-index: 1;
 }
 
@@ -30,15 +30,17 @@ rect.ContributionCalendar-day[data-level='4'] {
     fill: #0a4208;
 }
 
+/* &.calendar .width-full > .float-left {
+    display: none;
+} */
+
 &.calendar {
-    width: 50px;
     font-family: Helvetica, arial;
     border: 1px solid #DDDDDD;
     border-radius: 3px;
     min-height: 243px;
     text-align: center;
     margin: 0 auto;
-    z-index: 1;
 }
 
 .calendar-graph text.wday,
@@ -76,7 +78,6 @@ rect.ContributionCalendar-day[data-level='4'] {
 
 .calendar-graph {
     padding: 5px 0 0;
-    height: 126px;
     text-align: center;
 }
 
@@ -133,9 +134,7 @@ rect.ContributionCalendar-day[data-level='4'] {
     box-sizing: border-box;
     height: 26px;
 }
-.float-left {
-  display: none;
-}
+
 .left.text-muted {
     float: left;
     margin-left: 9px;
@@ -197,6 +196,7 @@ text.ContributionCalendar-label {
     fill: #ccc;
     font-size: 11px;
 }
+
 
 `;
 
