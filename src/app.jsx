@@ -11,16 +11,25 @@ import Calendar from './calendar';
 import About from './aboutme';
 
 // animation helpers
-const calc = (x, y) => [y + window.innerWidth, x - x];
+const clientWidth = function () {
+  return Math.max(window.innerWidth, document.documentElement.clientWidth);
+};
+const clientHeight = function () {
+  return Math.max(window.innerHeight, document.documentElement.clientHeight);
+};
+
+const calc = (x, y) => [y + clientWidth, x - x];
 const trans1 = (x, y) => `translate3d(${-x}px,${y}px,0)`;
 
 const App = () => {
   const [{ xy }, set] = useSpring(() => ({
-    xy: [-700, 0], config: { mass: 10, tension: 50, friction: 3000 },
+    xy: [-clientWidth(), 0], config: { mass: 10, tension: 50, friction: 3000 },
   }));
+
   useEffect(() => {
     githubCalendar('.calendar', 'blake-whitham', { responsive: true });
   }, []);
+
   return (
     <div
       style={{
@@ -36,6 +45,7 @@ const App = () => {
         zIndex: '0',
       }}
       onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
+      onTouchMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
     >
       <div
         style={{
