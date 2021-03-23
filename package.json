@@ -33,7 +33,7 @@
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
-    "@william-blake-whitham/react-terminal": "^1.2.0",
+    "@william-blake-whitham/react-terminal": "^1.4.3",
     "brotli-webpack-plugin": "^1.1.0",
     "compression-webpack-plugin": "^7.1.2",
     "express": "^4.17.1",

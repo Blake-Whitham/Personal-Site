@@ -16,7 +16,7 @@ const { clientWidth } = document.documentElement;
 const screenCenter = document.documentElement.clientHeight / 2;
 // const sum = 2000 / (y - screenCenter);
 
-const calc = (x, y) => [(y - screenCenter) * 3, x - x];
+const calc = (x, y) => [(y - screenCenter - 100) * 3, x - x];
 const trans1 = (x, y) => `translate3d(${-x}px,${y}px,0)`;
 
 const App = () => {
