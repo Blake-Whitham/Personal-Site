@@ -32,8 +32,10 @@ export default function Terminal() {
     cd: (directory) => `changed path to ${directory}`,
     crash: () => {
       const heap = [];
+      // eslint-disable-next-line no-constant-condition
       while (1) {
         heap.push(Date.now());
+        // eslint-disable-next-line no-console
         console.log(JSON.stringify(heap, null, 2));
       }
     },

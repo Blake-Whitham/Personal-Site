@@ -13,7 +13,10 @@ const Section = styled.div`
     "statement statement";
   margin: 0 auto 0 auto;
   border: 3px solid black;
-  width: 90%;
+  width: 80%;
+  background-color: rgba(255, 255, 255, .15);
+  backdrop-filter: blur(5px);
+  padding: 20px;
   z-index: 2;
 `;
 const Pic = styled.img`
@@ -33,7 +36,7 @@ const Title = styled.h3`
   font-weight: bold; */
   text-align: center;
 `;
-const Statement = styled.text`
+const Statement = styled.p`
   grid-area: statement;
 
 `;
@@ -44,7 +47,13 @@ export default function About() {
       <Pic src="./me.jpg" />
       <Name>William (Blake) Whitham</Name>
       <Title>Event Specialist turned Software Engineer</Title>
-      <Statement>this is a long an thoughtful message</Statement>
+      <Statement>
+        &emsp; After dedicating five years to creating awe-inspiring experiences for groups like AWS, Google, Facebook, and many more, I now have an opportunity to pivot my creativity and systematic approach into a sector where I can better the world from the bleeding edge by utilizing my skills in front-end and back-end development.
+        <br />
+        &emsp;Currently, I am not the best developer. In this constantly changing environment, what it takes to be on top is the trillion-dollar question, but I do understand that agility and persistence are the fuel that propels a company from the bottom up, and I do have the skill set to be an immeasurable asset in that engine.
+        <br />
+        &emsp;Driven by classic ideologies on self-reliance, I believed that it was my responsibility to meet certain accomplishments in life. To build, to teach, to entertain, and to better the world for the next generation. I have built a cabin, been a great educator, built beautiful experiences, and now I am set on disruption and improvement. To say I am excited to join your team would be an understatement, I am fueled and empowered to work together to make this world a better place, one line of code at a time.
+      </Statement>
     </Section>
   );
 }

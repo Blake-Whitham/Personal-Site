@@ -4,12 +4,12 @@ import { useSpring, animated } from 'react-spring';
 import githubCalendar from 'github-calendar';
 
 import Card from './card';
+import DemoCard from './demoCard';
+import About from './aboutme';
 
 import Laptop from './laptop';
 
 import Calendar from './calendar';
-
-import About from './aboutme';
 
 // animation helpers
 const { clientWidth } = document.documentElement;
@@ -58,7 +58,7 @@ const App = () => {
 
         }}
       >
-        <Card title=" Create " />
+        <DemoCard />
 
         <div>c2</div>
 
