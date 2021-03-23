@@ -20,21 +20,13 @@ export default function Terminal() {
     pixelDepth: window.screen.pixelDepth,
     width: window.screen.width,
   };
-  const cleanUp = (data) => {
-    const timing = {};
-    const list = data.timing.toJSON();
-    Object.keys(list).forEach((key) => {
-      if (data.timing[key] > 0) {
-        timing[key] = `${(list[key] - data.timeOrigin).toFixed(3)} ms`;
-      }
-    });
-    return {
-      timeOrigin: new Date(data.timeOrigin),
-      timing,
-      navigation: data.navigation,
-    };
-  };
 
+  const replacer = (key, value) => {
+    if (JSON.stringify(value) === '{}' || JSON.stringify(value) === '[]') {
+      return undefined;
+    }
+    return value;
+  };
   const commands = {
     whoami: 'Blake',
     cd: (directory) => `changed path to ${directory}`,
@@ -45,9 +37,12 @@ export default function Terminal() {
         console.log(JSON.stringify(heap, null, 2));
       }
     },
-    userdata: () => (`${window.clientInformation.appVersion}`),
+    userdata: () => (`${JSON.stringify(window.clientInformation.appVersion, null, 2)}`),
+
     screendata: () => (JSON.stringify(screen, null, 2)),
-    performance: () => (`${JSON.stringify(cleanUp(window.performance.toJSON()), null, 2)}`),
+
+    performance: () => (`${JSON.stringify(performance.getEntriesByType('navigation')[0].toJSON(), replacer, 2)}`),
+
     changeCarot: (pointer) => {
       setCarot(`anonUser ${pointer}`);
       return 'carot updated';

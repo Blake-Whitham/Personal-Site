@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
-import { throttle } from 'lodash';
+// import { throttle } from 'lodash';
 import githubCalendar from 'github-calendar';
 
 import Card from './card';
