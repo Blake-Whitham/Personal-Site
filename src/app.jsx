@@ -5,6 +5,8 @@ import githubCalendar from 'github-calendar';
 
 import Card from './card';
 import DemoCard from './demoCard';
+import Live from './liveCard';
+
 import About from './aboutme';
 
 import Laptop from './laptop';
@@ -62,7 +64,7 @@ const App = () => {
 
         <div>c2</div>
 
-        <Card title=" Live " />
+        <Live />
 
       </div>
 
