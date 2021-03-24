@@ -3,16 +3,15 @@ import { useSpring, animated } from 'react-spring';
 // import { throttle } from 'lodash';
 import githubCalendar from 'github-calendar';
 
-import Card from './card';
 import DemoCard from './demoCard';
 import Live from './liveCard';
 
 import About from './aboutme';
 
+// const Laptop = lazy(() => require('./laptop'));
 import Laptop from './laptop';
-
+// const Calendar = lazy(() => require('./calendar'));
 import Calendar from './calendar';
-
 // animation helpers
 const { clientWidth } = document.documentElement;
 const screenCenter = document.documentElement.clientHeight / 2;
@@ -62,7 +61,9 @@ const App = () => {
       >
         <DemoCard />
 
-        <div>c2</div>
+        {/* <Suspense fallback={<div>.</div>}> */}
+        <div id="modal" />
+        {/* </Suspense> */}
 
         <Live />
 
@@ -71,7 +72,6 @@ const App = () => {
       <About />
 
       <Laptop />
-
       <Calendar>
         <div className="calendar" />
       </Calendar>
