@@ -13,7 +13,6 @@ const Box = styled.div`
 `;
 
 function useOutsideAlerter(ref) {
-  console.log(ref, 'clicked');
   useEffect(() => {
     function handleClickOutside(event) {
       if (ref.current && !ref.current.contains(event.target)) {
