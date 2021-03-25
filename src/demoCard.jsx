@@ -32,6 +32,9 @@ const DemoCard = () => (
     <a href="https://meditation-iota.vercel.app/">
       <Img src="./meditation.png" />
     </a>
+    <a href={`http://affordability-component.herokuapp.com/mortgage/${Math.floor(Math.random() * 10000)}/`}>
+      <Img src="./affordability.png" />
+    </a>
     {/* Insert Scalable Snake prj
     <a href="https://meditation-iota.vercel.app/">
       <Img src="./meditation.png" />
