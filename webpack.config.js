@@ -8,7 +8,7 @@ module.exports = {
 
   output: {
     path: DIST_DIR,
-    filename: '[name].js',
+    filename: 'compressed.[name].js',
     // chunkFilename: '[id].[chunkhash].js',
   },
   resolve: {

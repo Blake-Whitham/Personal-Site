@@ -3,3 +3,4 @@ package-lock.*
 npm-debug.log
 .DS_Store
 /*.env
+compressed.*
