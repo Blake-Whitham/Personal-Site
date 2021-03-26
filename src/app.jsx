@@ -13,8 +13,8 @@ import About from './aboutme';
 // animation helpers
 // import githubCalendar from 'github-calendar';
 
-const Laptop = lazy(() => import('./laptop'));
 
+const Laptop = lazy(() => import('./laptop'));
 const Calendar = lazy(() => import('./calendar'));
 
 

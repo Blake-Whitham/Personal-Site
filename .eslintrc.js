@@ -4,12 +4,19 @@ module.exports = {
     es6: true,
     jest: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb'],
+  extends: [
+    'plugin:react/recommended',
+    'airbnb',
+    'eslint:recommended',
+    'plugin:import/error',
+    'plugin:import/warnings',
+  ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
   parserOptions: {
+    allowImportExportEverywhere: true,
     ecmaFeatures: {
       jsx: true,
     },
@@ -17,6 +24,7 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: [
+    'import',
     'react',
     'react-hooks'],
   rules: {
