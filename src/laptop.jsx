@@ -11,7 +11,7 @@ const Container = styled.div`
   z-index: 2;
 `;
 const LaptopImg = styled.div`
-  background-image: url(laptop.png);
+  background-image: url(laptop.webp);
   background-repeat: no-repeat;
   background-size: 100%;
   height: 57vw;

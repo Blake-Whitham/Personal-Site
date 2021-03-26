@@ -1,6 +1,10 @@
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
-const Calendar = styled.div`
+import githubCalendar from 'github-calendar';
+// const githubCalendar = lazy(() => import('github-calendar'));
+
+const Container = styled.div`
 & {
   border-radius: 10px;
   margin: 0px auto 0 auto;
@@ -196,8 +200,17 @@ text.ContributionCalendar-label {
     fill: #ccc;
     font-size: 11px;
 }
-
-
 `;
 
+const Calendar = () => {
+  useEffect(() => {
+    githubCalendar('#calendar', 'blake-whitham', { responsive: true });
+  }, []);
+
+  return (
+    <Container>
+      <div id="calendar" />
+    </Container>
+  );
+};
 export default Calendar;

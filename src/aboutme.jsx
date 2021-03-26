@@ -45,7 +45,7 @@ const Statement = styled.p`
 export default function About() {
   return (
     <Section>
-      <Pic src="./me.jpg" />
+      <Pic src="./me.webp" />
       <Name>William (Blake) Whitham</Name>
       <Title>Event Specialist turned Software Engineer</Title>
       <Statement>

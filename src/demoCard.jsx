@@ -63,7 +63,7 @@ const DemoCard = () => (
       <App>
         <legend>PostCard</legend>
         <a href="https://www.post-card.io">
-          <Img src="./postcard.png" />
+          <Img src="./postcard.webp" />
         </a>
         <Stack>
           <Technology>ArangoDB</Technology>
@@ -75,7 +75,7 @@ const DemoCard = () => (
       <App>
         <legend>Meditation</legend>
         <a href="https://meditation-iota.vercel.app/">
-          <Img src="./meditation.png" />
+          <Img src="./meditation.webp" />
         </a>
         <Stack>
           <Technology>Next.js</Technology>
@@ -83,9 +83,9 @@ const DemoCard = () => (
         </Stack>
       </App>
       <App>
-        <legend>Meditation</legend>
+        <legend>Affordability</legend>
         <a href={`http://affordability-component.herokuapp.com/mortgage/${Math.floor(Math.random() * 10000)}/`}>
-          <Img src="./affordability.png" />
+          <Img src="./affordability.webp" />
         </a>
         <Stack>
           <Technology>MongoDB</Technology>
@@ -96,7 +96,7 @@ const DemoCard = () => (
       </App>
       {/* Insert Scalable Snake prj
       <a href="https://meditation-iota.vercel.app/">
-        <Img src="./meditation.png" />
+        <Img src="./meditation.webp" />
       </a> */}
     </Apps>
   </Container>

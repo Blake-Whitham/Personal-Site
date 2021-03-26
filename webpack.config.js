@@ -1,9 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const CompressionPlugin = require('compression-webpack-plugin');
-const BrotliPlugin = require('brotli-webpack-plugin');
-
 const DIST_DIR = path.join(__dirname, '/client');
 
 module.exports = {
@@ -11,29 +8,22 @@ module.exports = {
 
   output: {
     path: DIST_DIR,
+    filename: '[name].js',
+    // chunkFilename: '[id].[chunkhash].js',
   },
   resolve: {
     extensions: ['.js', '.json', '.jsx', '.css'],
   },
   plugins: [
     new webpack.ProgressPlugin(),
-    new CompressionPlugin({
-      filename: '[path].gz[query]',
-      algorithm: 'gzip',
-      test: /\.js$|\.css$|\.html$/,
-      threshold: 10240,
-      minRatio: 0.7,
-    }),
-    new BrotliPlugin({
-      filename: '[path].br[query]',
-      test: /\.js$|\.css$|\.html$/,
-      threshold: 10240,
-      minRatio: 0.7,
-    })],
+  ],
 
   module: {
     rules: [{
       test: /\.(js|jsx)$/,
+      exclude: [
+        path.resolve(__dirname, '/node_modules/'),
+      ],
       include: [path.resolve(__dirname, 'src')],
       use: {
         loader: 'babel-loader',

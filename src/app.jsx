@@ -1,42 +1,41 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
 import { useSpring, animated } from 'react-spring';
-// import { throttle } from 'lodash';
-import githubCalendar from 'github-calendar';
+import { throttle } from 'lodash';
+
 
 import DemoCard from './demoCard';
 import Live from './liveCard';
 
 import About from './aboutme';
 
-// const Laptop = lazy(() => require('./laptop'));
-import Laptop from './laptop';
 // const Calendar = lazy(() => require('./calendar'));
-import Calendar from './calendar';
+// import Calendar from './calendar';
 // animation helpers
-const { clientWidth } = document.documentElement;
-const screenCenter = document.documentElement.clientHeight / 2;
-// const sum = 2000 / (y - screenCenter);
+// import githubCalendar from 'github-calendar';
 
-const calc = (x, y) => [(y - screenCenter - 100) * 3, x - x];
+const Laptop = lazy(() => import('./laptop'));
+
+const Calendar = lazy(() => import('./calendar'));
+
+
+const { clientWidth } = document.documentElement;
+
+const calc = (x, y) => [(y) * 3, x - x];
 const trans1 = (x, y) => `translate3d(${-x}px,${y}px,0)`;
 
 const App = () => {
   const [{ xy }, set] = useSpring(() => ({
-    xy: [-clientWidth * 0.8, 0], config: { mass: 10, tension: 50, friction: 3000 },
+    xy: [-clientWidth * 0.8, 0], config: { mass: 100, tension: 50, friction: 10000 },
   }));
 
-  const paralax = (e) => {
-    set({ xy: calc(e.screenX, e.screenY) });
+  const paralax = (event) => {
+    set({ xy: calc(event.screenX, event.screenY) });
   };
-
-  useEffect(() => {
-    githubCalendar('.calendar', 'blake-whitham', { responsive: true });
-  }, []);
 
   return (
     <div
       style={{
-        backgroundImage: 'url(\'SF.jpg\')',
+        backgroundImage: 'url(\'SF.webp\')',
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'fixed',
         backgroundSize: '100% 100%',
@@ -47,7 +46,7 @@ const App = () => {
         justifyContent: 'space-around',
         zIndex: '0',
       }}
-      onMouseMove={paralax}
+      onMouseMove={throttle((event) => { paralax(event); }, 50)}
       onTouchMove={paralax}
     >
       <div
@@ -71,13 +70,16 @@ const App = () => {
 
       <About />
 
-      <Laptop />
-      <Calendar>
-        <div className="calendar" />
-      </Calendar>
+      <Suspense fallback="...Loading">
+        <Laptop />
+      </Suspense>
+
+      <Suspense fallback="...Loading">
+        <Calendar />
+      </Suspense>
 
       <animated.img
-        src="./fog.png"
+        src="./fog.webp"
         style={{
           height: '125%',
           width: 'auto',
