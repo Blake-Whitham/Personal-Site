@@ -39,7 +39,7 @@ export default function Terminal() {
         console.log(JSON.stringify(heap, null, 2));
       }
     },
-    userdata: () => (`${JSON.stringify(window.clientInformation.appVersion, null, 2)}`),
+    userdata: () => (`${JSON.stringify(window.clientInformation.userAgent, null, 2)}`),
 
     screendata: () => (JSON.stringify(screen, null, 2)),
 
