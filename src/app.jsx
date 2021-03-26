@@ -60,9 +60,9 @@ const App = () => {
       >
         <DemoCard />
 
-        {/* <Suspense fallback={<div>.</div>}> */}
+
         <div id="modal" />
-        {/* </Suspense> */}
+
 
         <Live />
 

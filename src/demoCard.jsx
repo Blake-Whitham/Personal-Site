@@ -23,7 +23,24 @@ const Apps = styled.div`
   width: 100%;
   height: 100%;
   &::-webkit-scrollbar {
-    width: 0px;
+    /* width: 30px; */
+    /* position: relative; */
+    background: transparent;
+    width: 9px;
+  }
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px ghostwhite;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 2rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, .05);
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 2rem;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    /* box-shadow: inset 0 0 5px rgb(248, 248, 255); */
+    background: rgba(248, 248, 255, 0.3);
   }
 `;
 
