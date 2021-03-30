@@ -75,7 +75,7 @@ const Technology = styled.text`
 
 const DemoCard = () => (
   <Container>
-    <Title>Create</Title>
+    <Title>Apps</Title>
     <Apps>
       <App>
         <legend>PostCard</legend>

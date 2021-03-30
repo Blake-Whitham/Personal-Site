@@ -73,7 +73,7 @@ const Button = styled.button.attrs((props) => (
 
 const liveCard = () => (
   <Container>
-    <Title>Live</Title>
+    <Title>Articles</Title>
 
     <Buttons>
       <Button name="Journey">
