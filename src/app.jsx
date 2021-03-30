@@ -77,20 +77,21 @@ const App = () => {
         <Calendar />
       </Suspense>
 
-      <animated.img
-        src="./fog.webp"
-        alt="Rolling Fog Effect"
-        defer
-        style={{
-          height: '125%',
-          width: 'auto',
-          position: 'fixed',
-          bottom: '0',
-          left: '0',
-          transform: xy.interpolate(trans1),
-          zIndex: '0',
-        }}
-      />
+      <Suspense fallback="...Loading">
+        <animated.img
+          src="./fog.webp"
+          alt="Rolling Fog Effect"
+          style={{
+            height: '125%',
+            width: 'auto',
+            position: 'fixed',
+            bottom: '0',
+            left: '0',
+            transform: xy.interpolate(trans1),
+            zIndex: '0',
+          }}
+        />
+      </Suspense>
     </div>
   );
 };
