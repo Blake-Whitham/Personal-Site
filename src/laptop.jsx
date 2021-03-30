@@ -15,7 +15,7 @@ const LaptopImg = styled.div`
   background-repeat: no-repeat;
   background-size: 100%;
   height: 57vw;
-  width: 100vw;
+  width: 98vw;
   z-index: 3;
 `;
 

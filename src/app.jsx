@@ -39,8 +39,7 @@ const App = () => {
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'fixed',
         backgroundSize: '100% 100%',
-        height: '2000px',
-        width: '100vw',
+        height: 'auto',
         display: 'flex',
         flexFlow: 'column nowrap',
         justifyContent: 'space-around',
@@ -81,6 +80,7 @@ const App = () => {
       <animated.img
         src="./fog.webp"
         alt="Rolling Fog Effect"
+        defer
         style={{
           height: '125%',
           width: 'auto',

@@ -12,7 +12,7 @@ const Section = styled.div`
     "pic name"
     "pic title"
     "statement statement";
-  margin: 0 auto 0 auto;
+  margin: 77px auto;
   border: 3px solid black;
   width: 80%;
   background-color: rgba(255, 255, 255, .15);
@@ -24,28 +24,25 @@ const Pic = styled.img`
   grid-area: pic;
   border-radius: 50%;
   width: 150px;
+  height: auto;
 `;
 const Name = styled.h2`
   grid-area: name;
-  /* font-size: 900; */
-  /* font-weight: bold; */
   text-align: center;
 `;
 const Title = styled.h3`
   grid-area: title;
-  /* font-size: 900;
-  font-weight: bold; */
   text-align: center;
 `;
 const Statement = styled.p`
   grid-area: statement;
-
+  text-align: justify;
 `;
 
 export default function About() {
   return (
     <Section>
-      <Pic src="./me.webp" alt="Photo of Blake Whitham"/>
+      <Pic src="./me.webp" alt="Photo of Blake Whitham" width="150" height="150" />
       <Name>William (Blake) Whitham</Name>
       <Title>Event Specialist turned Software Engineer</Title>
       <Statement>
