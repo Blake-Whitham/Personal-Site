@@ -204,7 +204,7 @@ text.ContributionCalendar-label {
 
 const Calendar = () => {
   useEffect(() => {
-    githubCalendar('#calendar', 'blake-whitham', { responsive: true });
+    githubCalendar('#calendar', 'blake-whitham', { responsive: true, tooltips: true, });
   }, []);
 
   return (
