@@ -5,6 +5,9 @@ import styled from 'styled-components';
 const Frame = styled.iframe`
   height: 100%;
   width: 100%;
+  body {
+    padding: 5pt;
+  }
 `;
 export const Journey = () => (
   <Frame title="Journey" src="https://docs.google.com/document/d/e/2PACX-1vT_px7P5SXk2XJyKYhcsS-x06gPIP0_DDx7hqrr6QLVv8f8hwoW2x9y17Vo7Y4zz0PEjvbmyB9kqYBD/pub?embedded=true" />

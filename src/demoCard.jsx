@@ -7,8 +7,8 @@ const Container = styled.div`
     display: flex;
     flex-flow: column nowrap;
     height: 300px;
-    width: 20%;
-    min-width: 200px;
+    width: 25%;
+    min-width: 158px;
     background-color: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(5px);
     z-index: 3;

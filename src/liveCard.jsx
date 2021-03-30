@@ -15,8 +15,8 @@ const Container = styled.div`
   align-items: center;
   border-radius: 13px;
   height: 300px;
-  width: 20%;
-  min-width: 200px;
+  width: 25%;
+  min-width: 158px;
   background-color: rgba(255, 255, 255, .15);
   backdrop-filter: blur(5px);
   z-index: 3;
