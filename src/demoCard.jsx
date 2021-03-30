@@ -80,7 +80,7 @@ const DemoCard = () => (
       <App>
         <legend>PostCard</legend>
         <a href="https://www.post-card.io">
-          <Img src="./postcard.webp" />
+          <Img src="./postcard.webp" alt="PostCard App" />
         </a>
         <Stack>
           <Technology>ArangoDB</Technology>
@@ -92,7 +92,7 @@ const DemoCard = () => (
       <App>
         <legend>Meditation</legend>
         <a href="https://meditation-iota.vercel.app/">
-          <Img src="./meditation.webp" />
+          <Img src="./meditation.webp" alt="Meditation App"/>
         </a>
         <Stack>
           <Technology>Next.js</Technology>
@@ -102,7 +102,7 @@ const DemoCard = () => (
       <App>
         <legend>Affordability</legend>
         <a href={`http://affordability-component.herokuapp.com/mortgage/${Math.floor(Math.random() * 10000)}/`}>
-          <Img src="./affordability.webp" />
+          <Img src="./affordability.webp" alt="Affordability App"/>
         </a>
         <Stack>
           <Technology>MongoDB</Technology>

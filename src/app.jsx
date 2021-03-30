@@ -80,6 +80,7 @@ const App = () => {
 
       <animated.img
         src="./fog.webp"
+        alt="Rolling Fog Effect"
         style={{
           height: '125%',
           width: 'auto',
