@@ -1,4 +1,4 @@
-import React, { useEffect, lazy, Suspense } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { throttle } from 'lodash';
 
@@ -24,6 +24,13 @@ const calc = (x, y) => [(y) * 3, x - x];
 const trans1 = (x, y) => `translate3d(${-x}px,${y}px,0)`;
 
 const App = () => {
+  const [ user, setUser ] = useState('blake-whitham')
+
+  function updateUser(name) {
+    setUser(name);
+  }
+
+  //Paralax momentum
   const [{ xy }, set] = useSpring(() => ({
     xy: [-clientWidth * 0.8, 0], config: { mass: 100, tension: 50, friction: 10000 },
   }));
@@ -70,11 +77,23 @@ const App = () => {
       <About />
 
       <Suspense fallback="...Loading">
-        <Laptop />
+        <Laptop updateUser={updateUser}/>
       </Suspense>
 
+      <h1
+        style={{
+          margin: '2vh auto',
+          padding: '2px 15px',
+          zIndex: '3',
+          borderRadius: '10px',
+          backgroundImage:
+          'linear-gradient(0deg, rgba(0, 0, 0,.5), rgba(255, 255, 255,.7))',
+        }}
+      >
+        {user}'s Github History
+      </h1>
       <Suspense fallback="...Loading">
-        <Calendar />
+        <Calendar user={user}/>
       </Suspense>
 
       <Suspense fallback="...Loading">

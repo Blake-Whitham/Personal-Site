@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 // import "./styles.css";
 import { ReactTerminal } from '@william-blake-whitham/react-terminal';
 
-export default function Terminal() {
+export default function Terminal({ updateUser }) {
   const [carot, setCarot] = useState('anonUser %');
   const screen = {
     availHeight: window.screen.availHeight,
@@ -29,6 +29,7 @@ export default function Terminal() {
   };
   const commands = {
     whoami: 'Blake',
+    checkmygithub: (name) => { updateUser(name) },
     cd: (directory) => `changed path to ${directory}`,
     crash: () => {
       const heap = [];

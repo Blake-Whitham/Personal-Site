@@ -29,11 +29,11 @@ const Screen = styled.div`
 }
 `;
 
-const Laptop = () => (
+const Laptop = ({ updateUser }) => (
   <Container>
     <LaptopImg>
       <Screen>
-        <Terminal />
+        <Terminal updateUser={updateUser} />
       </Screen>
     </LaptopImg>
   </Container>
