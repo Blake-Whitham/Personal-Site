@@ -6,8 +6,8 @@
   "scripts": {
     "build": "webpack",
     "build-dev": "webpack -w",
-    "start": "node server",
-    "start-dev": "nodemon server"
+    "start": "node api",
+    "start-dev": "nodemon api"
   },
   "author": "Blake Whitham",
   "license": "ISC",

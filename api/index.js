@@ -33,7 +33,7 @@ const contactEmail = nodemailer.createTransport({
   },
 });
 
-app.post('/contact', (req, res) => {
+module.exports = (req, res) => {
   const name = req.body.name;
   const subject = req.body.subject;
   const email = req.body.email;
@@ -51,7 +51,7 @@ app.post('/contact', (req, res) => {
       res.json({ status: "sent" });
     }
   });
-})
+}
 
 contactEmail.verify((error) => {
   if (error) {
