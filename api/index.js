@@ -46,7 +46,8 @@ module.exports = (req, res) => {
   };
   contactEmail.sendMail(mail, (error) => {
     if (error) {
-      res.json({ status: "failed" });
+      console.log(error);
+      res.json({ status: "failed", error });
     } else {
       res.json({ status: "sent" });
     }
