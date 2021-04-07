@@ -1,7 +1,11 @@
 /* eslint-disable max-len */
 import React from 'react';
+import ReactDOM from 'react-dom';
+import ContactForm from './contact';
 
 import styled from 'styled-components';
+
+import Modal from './modal';
 
 const Section = styled.div`
   display: grid;
@@ -40,10 +44,24 @@ const Statement = styled.p`
 `;
 
 export default function About() {
+  function deployModal(name) {
+    ReactDOM.render(
+      <Modal component={name} />,
+      document.getElementById('modal'),
+    );
+  }
   return (
     <Section>
       <Pic src="./me.webp" alt="Photo of Blake Whitham" width="150" height="150" />
-      <Name>William (Blake) Whitham</Name>
+      <Name>
+        William (Blake) Whitham
+        <br></br>
+        <button
+          onClick={() => deployModal(<ContactForm />)}
+        >
+          Contact me
+        </button>
+      </Name>
       <Title>Event Specialist turned Software Engineer</Title>
       <Statement>
         &emsp; After dedicating five years to creating awe-inspiring experiences for groups like AWS, Google, Facebook, and many more, I now have an opportunity to pivot my creativity and systematic approach into a sector where I can better the world from the bleeding edge by utilizing my skills in front-end and back-end development.
