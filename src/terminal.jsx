@@ -30,7 +30,7 @@ export default function Terminal({ updateUser }) {
   const commands = {
     whoami: 'Blake',
     checkmygithub: (name) => { updateUser(name) },
-    cd: (directory) => `changed path to ${directory}`,
+    cd: (directory) => directory? `changed path to ${directory}`: ' is not a valid directory',
     crash: () => {
       alert('Why did you do that?')
       alert('')

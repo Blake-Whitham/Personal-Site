@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 import githubCalendar from 'github-calendar';
-// const githubCalendar = lazy(() => import('github-calendar'));
 
 const Container = styled.div`
 & {
@@ -34,16 +33,13 @@ rect.ContributionCalendar-day[data-level='4'] {
     fill: #0a4208;
 }
 
-/* &.calendar .width-full > .float-left {
-    display: none;
-} */
 
 &.calendar {
     font-family: Helvetica, arial;
-    border: 1px solid #DDDDDD;
+    /* border: 1px solid #DDDDDD; */
     border-radius: 3px;
     min-height: 243px;
-    text-align: center;
+    text-align: end;
     margin: 0 auto;
 }
 
@@ -204,13 +200,13 @@ text.ContributionCalendar-label {
 
 const Calendar = ({ user }) => {
   useEffect(() => {
-    githubCalendar('#calendar', user, { responsive: true, tooltips: true, });
+    githubCalendar('.calendar', user, { responsive: true });
   }, [user]);
 
   return (
-    <Container>
-      <div id="calendar" />
-    </Container>
+    <>
+      <Container className="calendar" />
+    </>
   );
 };
 export default Calendar;
