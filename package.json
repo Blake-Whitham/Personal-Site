@@ -31,12 +31,12 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "style-loader": "^2.0.0",
-    "webpack": "^5.26.3",
+    "webpack": "^5.33.2",
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
     "@loadable/component": "^5.14.1",
-    "@william-blake-whitham/react-terminal": "^1.4.5",
+    "@william-blake-whitham/react-terminal": "^1.4.10",
     "axios": "0.21.1",
     "brotli-webpack-plugin": "^1.1.0",
     "compression-webpack-plugin": "^7.1.2",

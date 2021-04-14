@@ -80,9 +80,8 @@ help           - prints command usage and instructions
   };
 
   const welcomeMessage = (
-    <span style={{lineHeight: '1rem'}}>
-{`
-  _________
+    <span>
+{`  _________
  | Try Me! |
   ---------
         \\   ^__^
