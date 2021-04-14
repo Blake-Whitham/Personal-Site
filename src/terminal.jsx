@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { ReactTerminal } from '@william-blake-whitham/react-terminal';
 
 export default function Terminal({ updateUser }) {
-  const [carot, setCarot] = useState('anonUser %');
+  const [carot, setCarot] = useState('Intraweb:dev-site anon$');
   const screen = {
     availHeight: window.screen.availHeight,
     availLeft: window.screen.availLeft,
@@ -32,12 +32,13 @@ export default function Terminal({ updateUser }) {
     checkmygithub: (name) => { updateUser(name) },
     cd: (directory) => `changed path to ${directory}`,
     crash: () => {
-      const heap = [];
+      alert('Why did you do that?')
+      alert('')
+      alert('Why?')
       // eslint-disable-next-line no-constant-condition
       while (1) {
-        heap.push(Date.now());
         // eslint-disable-next-line no-console
-        console.log(JSON.stringify(heap, null, 2));
+        console.log('current time in milliseconds is:', Date.now());
       }
     },
     userdata: () => (`${JSON.stringify(window.clientInformation.userAgent, null, 2)}`),
@@ -47,20 +48,53 @@ export default function Terminal({ updateUser }) {
     performance: () => (`${JSON.stringify(performance.getEntriesByType('navigation')[0].toJSON(), replacer, 2)}`),
 
     changeCarot: (pointer) => {
-      setCarot(`anonUser ${pointer}`);
+      setCarot(`Intraweb:dev-site anon${pointer}`);
       return 'carot updated';
+    },
+    cowsay: (phrase) => {
+      const text =
+`         ${'-'.repeat(phrase.length+2)}
+        | ${phrase} |
+         ${'-'.repeat(phrase.length+2)}
+              \\   ^__^
+               \\  (oo)\_______
+                  (__)\\       )\\/\\
+                      ||----w |
+                      ||     ||`
+      return text
+    },
+    help: () => {
+      return`
+      (param) = following text EX: cowsay HELLO | HELLO is the param
+whoami         - prints my name
+checkmygithub  - (param): retrieves (param)'s github history
+crash          - WARNING DO NOT USE
+userdata       - prints web accessible data about your computer
+screendata     - print your current screen data
+performance    - prints site performance from your system's perspective
+changeCarot    - (param): assigns (param) to carot
+cowsay         - (param): type something after cowsay to see a cow speak
+help           - prints command usage and instructions
+`
     },
   };
 
   const welcomeMessage = (
-    <span>
-      available commands:
-      {' '}
+    <span style={{lineHeight: '1rem'}}>
+{`
+  _________
+ | Try Me! |
+  ---------
+        \\   ^__^
+         \\  (oo)\_______
+            (__)\\       )\\/\\
+                ||----w |
+                ||     ||
+available commands: `}
       {Object.keys(commands).join(', ')}
       <br />
     </span>
   );
-  commands.boobs = '( * ㅅ * ) hehehe';
 
   return (
     <ReactTerminal
