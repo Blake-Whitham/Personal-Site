@@ -135,9 +135,9 @@ const ContactForm = () => {
           </div>
           <ReCAPTCHA
             sitekey="6Lec0qkaAAAAAK5k7wzbR9hZti5bJBdnSk6H3EY6"
-            onChange={()=> {setCaptcha('true')}}
+            onChange={()=> {setCaptcha(true)}}
           />
-         <Button type="submit" disabled={captcha? 'false' : 'true'}>Submit</Button>
+         <Button type="submit" disabled={captcha? false: true}>Submit</Button>
         </form>
       </> }
     </Window>
