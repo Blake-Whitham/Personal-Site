@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import ContactForm from './contact';
 
@@ -42,13 +42,44 @@ const Statement = styled.p`
   grid-area: statement;
   text-align: justify;
 `;
+const Button = styled.button`
+
+  height: 3em;
+  width: 34%;
+  margin: 10px 0 0;
+  border: 3px outset darkslategray;
+  border-radius: 2rem;
+  background-image: radial-gradient(circle at center,
+    rgba(255, 240, 243, 0.5) 0%,
+    rgba(230, 220, 222, 0.5) 27.5%,
+    rgba(223, 209, 214, 0.5) 40%,
+    rgba(211, 195, 203, 0.5) 57.5%,
+    rgba(185, 168, 174, 0.5) 75%,
+    rgba(177, 163, 168, 0.5) 100%) !important;
+
+  &:active {
+    box-shadow: inset 6px -8px 6px 0px rgb(255 255 255 / 75%);
+    border: 3px inset darkslategray;
+  }
+  &:focus {
+    outline: none;
+  }
+`;
+
 
 export default function About() {
+  const [x, setX] = useState(1);
+  const [y, setY] = useState(1)
   function deployModal(name) {
     ReactDOM.render(
       <Modal component={name} />,
       document.getElementById('modal'),
     );
+  }
+  function updateMouse(e) {
+
+    setX(e.clientX);
+    setY(e.clientY);
   }
   return (
     <Section>
@@ -56,11 +87,13 @@ export default function About() {
       <Name>
         William (Blake) Whitham
         <br></br>
-        <button
+        <Button
           onClick={() => deployModal(<ContactForm />)}
+          onMouseMove={(e) => { updateMouse(e); }}
+          x={x} y={y}
         >
           Contact me
-        </button>
+        </Button>
       </Name>
       <Title>Event Specialist turned Software Engineer</Title>
       <Statement>

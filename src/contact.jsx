@@ -31,6 +31,19 @@ const Button = styled.button`
   width: -webkit-fill-available;
   margin: 2rem;
 `;
+const Exit = styled.button`
+  position: absolute;
+  font-size: 25px;
+  padding: 1px 8px;
+  top: 1px;
+  right: 1px;
+  background-color: transparent;
+  border-width: 0.5px;
+  border-radius: 2.5em;
+  &:focus {
+    outline: none;
+  }
+`;
 
 const ContactForm = () => {
   const [name, setName] = useState('');
@@ -57,6 +70,7 @@ const ContactForm = () => {
     <Window>
       { sent ? <h1>Thank You</h1> :
       <>
+        <Exit onClick={closeModal} >X</Exit>
         <h1>Contact Me</h1>
         <form
           onSubmit={(e)=>{handleSubmit(e)}}
