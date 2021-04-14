@@ -37,19 +37,20 @@
   "dependencies": {
     "@loadable/component": "^5.14.1",
     "@william-blake-whitham/react-terminal": "^1.4.5",
+    "axios": "0.21.1",
     "brotli-webpack-plugin": "^1.1.0",
     "compression-webpack-plugin": "^7.1.2",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-static-gzip": "^2.1.1",
     "github-calendar": "^2.2.7",
     "lodash": "^4.17.21",
+    "nodemailer": "^6.5.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-google-recaptcha": "^2.1.0",
     "react-spring": "^8.0.27",
-    "styled-components": "^5.2.1",
-    "nodemailer": "^6.5.0",
-    "cors": "^2.8.5",
-    "axios": "0.21.1"
+    "styled-components": "^5.2.1"
   }
 }

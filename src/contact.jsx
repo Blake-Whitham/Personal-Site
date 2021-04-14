@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import axios from 'axios';
 
+import ReCAPTCHA from "react-google-recaptcha";
+
 const Window = styled.div`
   text-align: -webkit-center;
   background-color: rgba(188, 200, 200, 0.9);
@@ -51,6 +53,7 @@ const ContactForm = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [sent, setSent] = useState(false)
+  const [captcha, setCaptcha] = useState(false)
 
   function closeModal(){
     ReactDOM.render(<div></div>, document.getElementById('modal'));
@@ -124,12 +127,17 @@ const ContactForm = () => {
                   id="message"
                   name="message"
                   required
+                  autocapitalize="sentences"
                   onChange={(e)=>{setMessage(e.target.value)}}
                 />
               </label>
             </fieldset>
           </div>
-          <Button type="submit">Submit</Button>
+          <ReCAPTCHA
+            sitekey="6Lec0qkaAAAAAK5k7wzbR9hZti5bJBdnSk6H3EY6"
+            onChange={()=> {setCaptcha('true')}}
+          />
+         <Button type="submit" disabled={captcha? 'false' : 'true'}>Submit</Button>
         </form>
       </> }
     </Window>
